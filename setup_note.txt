@@ -1,0 +1,37 @@
+install Django
+
+start a Django project:
+django-admin startproject ProteoSeq
+
+Setup mysql with django (on mac)
+first install mysql
+export PATH=$PATH:/usr/local/mysql/bin
+
+brew install mysql-connector-c
+sudo pip install MySQL-python
+
+mysql --user=root mysql
+CREATE DATABASE ProteoSeq_db CHARACTER SET UTF8;
+CREATE USER proteoseq_dev@localhost IDENTIFIED BY 'proteoseq_hack_pw';
+GRANT ALL PRIVILEGES ON ProteoSeq_db.* TO proteoseq_dev@localhost;
+
+then go to the settings.py file
+
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'ProteoSeq_db',
+'USER': 'proteoseq_dev',
+'PASSWORD': 'proteoseq_hack_pw',
+'HOST': 'localhost',
+'PORT': '',
+}
+}
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser (to use http://127.0.0.1:8000/admin/)
+
+proteoseq_dev
+proteoseq_hack_pw

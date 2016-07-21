@@ -1,228 +1,111 @@
-<!DOCTYPE HTML>
-<!--
-	Ex Machina by TEMPLATED
-    templated.co @templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+ {% extends 'home/base.html' %}
+ {% block content %}
+ {% load staticfiles %}
 
--->
+<!-- Main -->
+<div id="page">
 
-<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+	<!-- Main -->
+	<div id="main" class="container">
+		<div class="row">
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
-{% load staticfiles %}
-
-<link rel="stylesheet" href="{% static 'home/css/style.css' %}"/>
-<link rel="stylesheet" href="{% static 'home/css/font-awesome.min.css' %}"/>
-<link rel="stylesheet" href="{% static 'home/css/font-awesome.css' %}"/>
-<link rel="stylesheet" href="{% static 'home/css/skel-noscript.css' %}"/>
-<link rel="stylesheet" href="{% static 'home/css/style.css' %}"/>
-<link rel="stylesheet" href="{% static 'home/css/style-desktop.css' %}" />
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-		<title>ProteoSeq Web UI</title>
-
-	</head>
-
-	<body class="homepage">
-
-	<!-- Header -->
-		<!-- <div id="header">
-			<div class="container">
-
-
-					<div id="logo">
-						<h1><a href="#">ProteoSeq</a></h1>
-					</div>
-
-
-					<nav id="nav">
-						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="analysis.html">Analysis</a></li>
-							<li><a href="doc.html">Documentation</a></li>
-							<li><a href="contactus.html">ContactUs</a></li>
-						</ul>
-					</nav>
-
-			</div>
-		</div> -->
-	<!-- Header -->
-	<nav id="navbar_main" class="navbar navbar-fixed-top" >
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a id="navbar_main_link" class="navbar-brand" href="#">ProteoSeq</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.html" style="color:#ffffff">Home</a></li>
-				<li><a href="analysis.html" style="color:#ffffff">Analysis</a></li>
-				<li><a href="doc.html" style="color:#ffffff">Documentation</a></li>
-				<li><a href="contactus.html" style="color:#ffffff">ContactUs</a></li>
-			</ul>
-			<div id="navbar" class="navbar-collapse collapse">
-
-				<form class="navbar-form navbar-right">
-					<div class="form-group">
-						<input type="text" placeholder="Email" class="form-control">
-					</div>
-					<div class="form-group">
-						<input type="password" placeholder="Password" class="form-control">
-					</div>
-					<button id="navbar_submit_btn" type="submit" class="btn btn-primary">Sign in</button>
-				</form>
-			</div><!--/.navbar-collapse -->
-		</div>
-	</nav>
-
-
-
-
-
-		<!-- Main -->
-		<div id="page">
-
-			<!-- Main -->
-			<div id="main" class="container">
-				<div class="row">
-
-
-
-					<div class="9u skel-cell-important">
-						<section>
-							<!--<header>
+			<div class="9u skel-cell-important">
+				<section>
+					<!--<header>
 								<h2>Integer gravida nibh quis urna</h2>
 								<span class="byline">Augue praesent a lacus at urna congue rutrum</span>
 							</header>-->
-							<p>Alternative splicing and other types of mRNA processing events contribute critically to proteome diversity by allowing one gene to encode multiple functionally distinct proteins. The switching of protein isoform expression from one isoform to another is widely implicated in disease and environmental stress, including heart diseases, cancer, alcohol exposure, and oxidative damage. Although many alternative isoforms have now been discovered, their existence and abundance at the protein level remain mostly unknown to researchers, rendering it very challenging to ascertain their true physiological functions and disease relevance. In theory, researchers can harness RNA-seq in conjunction with shotgun proteomics data to guide analysis for protein isoform characterization. However, proteomics and transcriptomics resources are currently fragmentary. Proteomics and transcriptomics data exist in isolated repositories, and computational tools to integrate them are lacking.</p>
+					<p>Alternative splicing and other types of mRNA processing events contribute critically to proteome diversity by allowing one gene to encode multiple functionally distinct proteins. The switching of protein isoform expression from one isoform to another
+						is widely implicated in disease and environmental stress, including heart diseases, cancer, alcohol exposure, and oxidative damage. Although many alternative isoforms have now been discovered, their existence and abundance at the protein level remain
+						mostly unknown to researchers, rendering it very challenging to ascertain their true physiological functions and disease relevance. In theory, researchers can harness RNA-seq in conjunction with shotgun proteomics data to guide analysis for protein
+						isoform characterization. However, proteomics and transcriptomics resources are currently fragmentary. Proteomics and transcriptomics data exist in isolated repositories, and computational tools to integrate them are lacking.</p>
 
-							<p>The rapid revolution of Big Data Sciences has now afforded new opportunities for the integration of proteotranscriptomics data. In this new project, we are building ProteoSeq: a user-oriented multi-omics integration platform designed to overcome the challenge of incoherent data and computational resources in the currently separate omics fields of proteomics and transcriptomics. ProteoSeq will enable the effective use of complementary RNA and protein data for in-depth inquiry through a series of proven and preassembled steps behind a seamless user interface. Our goal is to implement ProteoSeq to enable wide users to combine transcriptomics and proteomics data for the routine, large-scale characterization of alternative protein isoforms in various disease models.</p>
+					<p>The rapid revolution of Big Data Sciences has now afforded new opportunities for the integration of proteotranscriptomics data. In this new project, we are building ProteoSeq: a user-oriented multi-omics integration platform designed to overcome
+						the challenge of incoherent data and computational resources in the currently separate omics fields of proteomics and transcriptomics. ProteoSeq will enable the effective use of complementary RNA and protein data for in-depth inquiry through a series
+						of proven and preassembled steps behind a seamless user interface. Our goal is to implement ProteoSeq to enable wide users to combine transcriptomics and proteomics data for the routine, large-scale characterization of alternative protein isoforms
+						in various disease models.</p>
 
-
-
-							<a href="analysis.html" class="button">Start Analysis</a>
-
-
-						</section>
-					</div>
-
-
-					<div class="3u">
-						<section class="sidebar">
-							<header>
-								<h2>Public Datasets</h2>
-							</header>
-							<ul class="style1">
-								<h2>Proteomics</h2>
-								<li><a href="http://www.ebi.ac.uk/pride/archive/">PRIDE Archive</a></li>
-								<li><a href="http://www.peptideatlas.org/">Peptide Atlas</a></li>
-								<li><a href="https://www.proteomicsdb.org/">Proteomics DB</a></li>
-								<li><a href="#"></a></li>
-
-							</ul>
-						</section>
-						<section class="sidebar">
-							<header>
-
-							</header>
-							<ul class="style1">
-								<h2>RNA-seq</h2>
-								<li><a href="#">ENCODE</a></li>
-								<li><a href="#">dbGAP</a></li>
-								<li><a href="#">GeneDB</a></li>
-								<li><a href="#"></a></li>
-
-							</ul>
-						</section>
-					</div>
-
-
-
-
-
-
-				</div>
-
-
-
-
-
-
-
+					<a href="analysis.html" class="button">Start Analysis</a>
+				</section>
 			</div>
-			<!-- Main -->
-
-		</div>
-	<!-- /Main -->
 
 
+			<div class="3u">
+				<section class="sidebar">
+					<header>
+						<h2>Public Datasets</h2>
+					</header>
+					<ul class="style1">
+						<h2>Proteomics</h2>
+						<li><a href="http://www.ebi.ac.uk/pride/archive/">PRIDE Archive</a></li>
+						<li><a href="http://www.peptideatlas.org/">Peptide Atlas</a></li>
+						<li><a href="https://www.proteomicsdb.org/">Proteomics DB</a></li>
+						<li>
+							<a href="#"></a>
+						</li>
 
-	<!-- Featured -->
-		<div id="featured">
-			<div class="container">
-				<div class="row">
-					<section class="4u">
-						<div class="box">
-							<a href="#" class="image left"><img src="{% static 'home/images/pics04.jpg' %}"alt=""></a>
-							<h3>Protein Inference Problem</h3>
-							<p> </p>
-							<p> </p>
-							<a href="#" class="button">More</a>
-						</div>
-					</section>
-					<section class="4u">
-						<div class="box">
-							<a href="#" class="image left"><img src="{% static 'home/images/pics05.jpg' %}"alt=""></a>
+					</ul>
+				</section>
+				<section class="sidebar">
+					<header>
 
-							<h3>Shotgun Proteomics</h3>
-							<p> </p>
-							<p> </p>
-							<p> </p>
-							<a href="#" class="button">More</a>
-						</div>
-					</section>
-					<section class="4u">
-						<div class="box">
-							<a href="#" class="image left"><img src="{% static 'home/images/pics06.jpg' %}"alt=""></a>
-							<h3>3rd generation RNA-sequencing</h3>
-							<p> </p>
-							<p> </p>
-							<a href="#" class="button">More</a>
-						</div>
-					</section>
-				</div>
-				<div class="divider"></div>
+					</header>
+					<ul class="style1">
+						<h2>RNA-seq</h2>
+						<li><a href="#">ENCODE</a></li>
+						<li><a href="#">dbGAP</a></li>
+						<li><a href="#">GeneDB</a></li>
+						<li>
+							<a href="#"></a>
+						</li>
+
+					</ul>
+				</section>
 			</div>
 		</div>
-	<!-- /Featured -->
+	</div>
+	<!-- Main -->
+</div>
+<!-- /Main -->
 
 
 
-	<!-- Copyright -->
-		<div id="copyright" class="container">
-			Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+<!-- Featured -->
+<div id="featured">
+	<div class="container">
+		<div class="row">
+			<section class="4u">
+				<div class="box">
+					<a href="#" class="image left"><img src="{% static 'home/images/pics04.jpg' %}" alt=""></a>
+					<h3>Protein Inference Problem</h3>
+					<p> </p>
+					<p> </p>
+					<a href="#" class="button">More</a>
+				</div>
+			</section>
+			<section class="4u">
+				<div class="box">
+					<a href="#" class="image left"><img src="{% static 'home/images/pics05.jpg' %}" alt=""></a>
+
+					<h3>Shotgun Proteomics</h3>
+					<p> </p>
+					<p> </p>
+					<p> </p>
+					<a href="#" class="button">More</a>
+				</div>
+			</section>
+			<section class="4u">
+				<div class="box">
+					<a href="#" class="image left"><img src="{% static 'home/images/pics06.jpg' %}" alt=""></a>
+					<h3>3rd generation RNA-sequencing</h3>
+					<p> </p>
+					<p> </p>
+					<a href="#" class="button">More</a>
+				</div>
+			</section>
 		</div>
-
-
-	</body>
-</html>
+		<div class="divider"></div>
+	</div>
+</div>
+<!-- /Featured -->
+{% endblock %}

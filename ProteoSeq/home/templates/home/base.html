@@ -41,7 +41,8 @@
 </head>
 
 <body class="homepage">
-  <!-- Header -->
+    <!-- Header -->
+
     <nav id="navbar_main" class="navbar navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -57,27 +58,27 @@
                 <li class="active"><a href="{% url 'home:index' %}" style="color:#ffffff">Home</a></li>
                 <li><a href="analysis.html" style="color:#ffffff">Analysis</a></li>
                 <li><a href="{% url 'home:documentation' %}" style="color:#ffffff">Documentation</a></li>
-                <li><a href="{% url 'home:contact-us' %}" style="color:#ffffff">ContactUs</a></li>
+                <li><a href="{% url 'home:contact-us' %}" style="color:#ffffff">Contact Us</a></li>
+                <li><a href="{% url 'usersManager:login_home'%}" style="color:#ffffff">Login</a></li>
             </ul>
-            <div id="navbar" class="navbar-collapse collapse">
-
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
-                    </div>
-                    <button id="navbar_submit_btn" type="submit" class="btn btn-primary">Sign in</button>
-                </form>
-            </div>
+            {% if not in_login_page %}
+              <div id="navbar" class="navbar-collapse collapse">
+                  <form class="navbar-form navbar-right" action="{% url 'usersManager:login_home'%}?next={{request.path}}" method="post">
+                      {% csrf_token %}
+                      {% for field in login_form %}
+                          {{ field }}
+                      {% endfor %}
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+              </div>
+              {% else %}
+            {% endif %}
             <!--/.navbar-collapse -->
         </div>
     </nav>
 
 
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
 
 </body>
 

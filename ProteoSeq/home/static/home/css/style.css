@@ -12,6 +12,9 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+	.form-control{
+		background:#ffffcc;
+	}
 
 	#navbar_main_link{
 		color: #ffffff;

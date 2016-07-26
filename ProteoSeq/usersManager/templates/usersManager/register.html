@@ -1,0 +1,54 @@
+{% extends 'home/base.html' %}
+{% block content %}
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'usersManager/css/login_register_style.css' %}" />
+
+<div id="login_register_container" class="container">
+
+    <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Register</div>
+            </div>
+            {% if register_form.errors %}
+                {% if register_form.non_field_errors %}
+                  {% for error in register_form.non_field_errors %}
+                      <div style="text-align: center;">
+                          <span class="label label-warning" >{{ error|escape }}</span>
+                      </div>
+                  {% endfor %}
+                {% else %}
+                      <div style="text-align: center;">
+                          <span class="label label-warning">Illegal email address,names or password</span>
+                      </div>
+                {% endif %}
+            {% endif %}
+            <div style="padding-top:30px" class="panel-body">
+
+                <div style="display:none" id="register-alert" class="alert alert-danger col-sm-12"></div>
+
+                <form id="registerform" class="form-horizontal" role="form" action="{% url 'usersManager:register_user'%}{% if redirect_url %}?next={{redirect_url}}{% endif %}" method="post">
+
+                    {% csrf_token %}
+                    {% for field in register_form %}
+                      <div style="margin-bottom: 25px" class="input-group">
+                          <span class="input-group-addon"><i ></i></span>
+                          {{field}}
+                      </div> 
+                    {% endfor %}
+
+                    <div style="margin-top:10px" class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls">
+                            <button id="btn-register" type="submit" class="btn btn-primary">Sign Up!</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

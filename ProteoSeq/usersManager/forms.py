@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
+
 class LoginForm(forms.Form):
     # this case, username is the same as email
     username = forms.CharField(
@@ -93,6 +95,12 @@ class RegistrationForm(forms.Form):
     def clean(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
+        username = self.cleaned_data.get('username')
+
         if password1 and password1 != password2:
             raise forms.ValidationError("Passwords don't match")
+
+        duplicate_names = User.objects.filter(username=username)
+        if duplicate_names:
+            raise forms.ValidationError("This email is registered already")
         return self.cleaned_data

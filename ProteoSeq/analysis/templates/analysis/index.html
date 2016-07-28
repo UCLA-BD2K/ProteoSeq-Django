@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+{% block content %}
+{% load staticfiles %}
+<!-- <link rel="stylesheet" href="{% static 'analysis/css/analysis_main.css' %}" /> -->
+<!-- <div style="padding-top: 150px;padding-bottom: 20px;width:50%;margin:auto">
+  <div class="jumbotron" >
+  <h1 class="display-3">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+
+
+</div> -->
+{% if not user.is_authenticated %}
+<div class="container" style="padding-top: 150px;">
+    <div class="jumbotron">
+        <p><h1>You have not signed in...</h1></p><br>
+        <p>Please sign in or register for an account to use the analysis tools</p><br>
+        <!-- <p><a href="#" class="btn btn-success btn-lg">Click Here »</a></p> -->
+    </div>
+</div>
+{% else %}
+{% endif %}
+
+{% endblock %}

@@ -1,6 +1,4 @@
-{% extends 'home/base.html' %}
-{% block content %}
-{% load staticfiles %}
+{% extends 'home/base.html' %} {% block content %} {% load staticfiles %}
 <!-- <link rel="stylesheet" href="{% static 'analysis/css/analysis_main.css' %}" /> -->
 <!-- <div style="padding-top: 150px;padding-bottom: 20px;width:50%;margin:auto">
   <div class="jumbotron" >
@@ -15,14 +13,85 @@
 
 </div> -->
 {% if not user.is_authenticated %}
+
+
+
 <div class="container" style="padding-top: 150px;">
     <div class="jumbotron">
-        <p><h1>You have not signed in...</h1></p><br>
-        <p>Please sign in or register for an account to use the analysis tools</p><br>
-        <!-- <p><a href="#" class="btn btn-success btn-lg">Click Here »</a></p> -->
+        <p>
+            <h1>You have not signed in...</h1></p>
+        <br>
+        <p>Please sign in or register for an account to use the analysis tools</p>
+        <br>
     </div>
 </div>
-{% else %}
-{% endif %}
 
-{% endblock %}
+
+{% else %}
+<link rel="stylesheet" href="{% static 'analysis/css/upload_style.css' %}" />
+
+<!-- <div class="container" style="padding-top: 150px;">
+    <div class="jumbotron">
+        <div id="upload_container">
+            <input type="hidden" id="public_key_input" value="{{ public_key }}" />
+
+            <div id="file_selection_div">
+                <input type="file" id="new_file_upload" class="inputfile" />
+                <label id="upload_label" for="new_file_upload"><i class="fa fa-cloud-upload"></i> New Upload</label>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</div> -->
+
+
+<link rel="stylesheet" href="{% static 'analysis/css/tab.css' %}" />
+
+<ul class="tabs" >
+    <li class="tab-li" style="display:inline-block;">
+        <input type="radio" name="tabs" id="tab1" checked />
+        <label class="tab-label" for="tab1">File Upload</label>
+        <div id="tab-content1" class="tab-content">
+          <div id="upload_container">
+              <input type="hidden" id="public_key_input" value="{{ public_key }}" />
+
+              <div id="file_selection_div">
+                  <input type="file" id="new_file_upload" class="inputfile" />
+                  <label id="upload_label" for="new_file_upload"><i class="fa fa-cloud-upload"></i> New Upload</label>
+              </div>
+
+
+              
+
+              </div>
+
+          </div>
+        </div>
+
+
+    </li>
+
+    <li class="tab-li" style="display:inline-block;">
+        <input type="radio" name="tabs" id="tab2" />
+        <label class="tab-label" for="tab2">Task Management</label>
+        <div id="tab-content2" class="tab-content">
+            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+                quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel
+                eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla?</p>
+        </div>
+    </li>
+</ul>
+<br style="clear: both;" />
+
+
+<script type="text/javascript" src="{% static 'analysis/js/evaporate.js' %}"></script>
+<script type="text/javascript" src="{% static 'analysis/js/upload_settings.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'analysis/js/nprogress.js' %}"></script> -->
+
+{% endif %} {% endblock %}
